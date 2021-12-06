@@ -1,0 +1,21 @@
+1. Understand the problem
+
+2. Discover inputs, processes, outputs
+
+	nouns = inputs, outputs
+	verbs = processes
+
+3. Drive design with tests
+
+4. Write algorithm in psuedocode
+	
+	Can a flow diagram be used?
+
+
+Test Case Example:
+
+	Inputs:
+	Expected result:
+	Actual result:
+
+

@@ -1,0 +1,58 @@
+FOCUS ON THE CURSOR
+
+h,j,k,l - movement
+
+0 - begin line
+$ - end line
+
+a - insert after cursor
+
+w - move by word right
+b - move by word left
+
+gg - top of file
+G - end of file
+ngg - go to line nth line
+
+H - move to top of screen
+M - move to middle of screen
+L - move to bottom of screen
+
+
+Search:
+/ - start search
+n - cycle through matches after
+N - cycle through matches previous
+
+
+Visual Mode:
+
+V - enter visual mode
+y - copy
+p - paste
+
+aw - a word
+as - a sentence
+ab - a block
+
+
+Running Commands:
+
+:! command 
+:f - overwrite filename
+:w - write to file
+:e - open existing file
+:cd - change current directory
+
+
+Window splits:
+:vs - vertical split
+
+Move between windows:
+ctrl + w | h j k l 
+ctrl + d - scroll 1/2 window
+
+
+Help
+:help command
+
