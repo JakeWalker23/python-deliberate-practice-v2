@@ -18,3 +18,11 @@ class Test_NumbersToNames(unittest.TestCase):
         months.convert_to_month()
 
         assert months.converted_month == "December"
+
+    def test_key_error_for_user_input(self):
+        months = NumbersToMonths()
+        months.user_choice = ""
+
+        months.convert_to_month()
+
+        assert len(months.errors) > 0
