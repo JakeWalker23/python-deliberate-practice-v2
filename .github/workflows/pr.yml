@@ -18,11 +18,14 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+            - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
       - uses: dschep/install-pipenv-action@v1
         with:
           version: 2021.5.29
-      - name: Pipenv install and test
-
-        run: |
+      - uses: dschep/install-pipenv-action@v1
+      - run: |
           pipenv install
           pipenv run test
