@@ -22,14 +22,14 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: dschep/install-pipenv-action@v1
-        with:
-          version: 2021.5.29
-      - uses: dschep/install-pipenv-action@v1
-      - run: |
-          pipenv install
-          pipenv run test
-      
+        - uses: dschep/install-pipenv-action@v1
+          with:
+            version: 2021.5.29
+        - uses: dschep/install-pipenv-action@v1
+        - run: |
+            pipenv install
+            pipenv run test
+        
       - name: Bump version and push tag
         id: version-bump
         uses: anothrNick/github-tag-action@1.26.0
