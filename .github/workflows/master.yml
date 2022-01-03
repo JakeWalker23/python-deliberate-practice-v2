@@ -1,0 +1,37 @@
+name: Python Deliberate Practice V2 - Master
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9.1]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: dschep/install-pipenv-action@v1
+        with:
+          version: 2021.5.29
+      
+      - name: Pipenv install and test
+        run: |
+          pipenv install
+          pipenv run test
+      
+      - name: Bump version and push tag
+        id: version-bump
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          RELEASE_BRANCHES: master
+          DEFAULT_BUMP: patch
