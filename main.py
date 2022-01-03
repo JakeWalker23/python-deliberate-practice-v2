@@ -1,9 +1,7 @@
-from src.makingDecisions.multistateTaxCalculator.multistateTaxCalculator import MultiStateTaxCalculator
-
+from src.makingDecisions.numbersToMonths.numbersToMonths import NumbersToMonths
 print("Running code")
 
-multiState = MultiStateTaxCalculator()
-
-multiState.prompt()
-multiState.calculateTax()
-multiState.display()
+names = NumbersToMonths()
+names.prompt()
+names.convert_to_month()
+names.display()

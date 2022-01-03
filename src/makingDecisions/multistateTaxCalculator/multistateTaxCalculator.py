@@ -1,6 +1,3 @@
-import decimal
-
-
 class MultiStateTaxCalculator:
     def __init__(self):
         self.order_amount = 0
