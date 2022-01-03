@@ -9,8 +9,5 @@ coverage = "*"
 
 [dev-packages]
 
-[requires]
-python_version = "3.6"
-
 [scripts]
 test = "bash ./test.sh"
