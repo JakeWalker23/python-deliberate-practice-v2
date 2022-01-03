@@ -13,20 +13,6 @@ class TestBMICalculator(unittest.TestCase):
 
         assert bmi.bmi_index == 24.68
 
-    # Need to mock input for prompt user
-    # @patch.object(BMI, "prompt_user")
-    # def test_prompt_user(mock_prompt_user):
-    #     # GIVEN
-    #     mock_prompt_user.return_value = 1
-
-    #     # WHEN I call prompt_user
-    #     bmi = BMI(2, 2)
-    #     bmi.prompt_user()
-
-    #     # THEN height and weight should be saved to the object
-    #     assert bmi.height == 1
-    #     assert bmi.weight == 1
-
     def test_display_bmi_is_ideal(self):
         height = 72
         weight = 182

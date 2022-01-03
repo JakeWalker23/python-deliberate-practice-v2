@@ -1,8 +1,7 @@
-from src.makingDecisions.bmiCalculator.BMI import BMI
-
+from src.makingDecisions.numbersToMonths.numbersToMonths import NumbersToMonths
 print("Running code")
 
-bmi = BMI(72, 182)
-bmi.prompt_user()
-bmi.calculate_bmi()
-bmi.display_bmi()
+names = NumbersToMonths()
+names.prompt()
+names.convert_to_month()
+names.display()
