@@ -1,7 +1,5 @@
-from src.makingDecisions.numbersToMonths.numbersToMonths import NumbersToMonths
+from src.makingDecisions.troubleshootingCarIssues.TroubleshootCarIssues import TroubleshootCarIssues
 print("Running code")
 
-names = NumbersToMonths()
-names.prompt()
-names.convert_to_month()
-names.display()
+carIssues = TroubleshootCarIssues()
+carIssues.troubleshoot_car_issues()
