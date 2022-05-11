@@ -2,4 +2,4 @@ from src.makingDecisions.troubleshootingCarIssues.TroubleshootCarIssues import T
 print("Running code")
 
 carIssues = TroubleshootCarIssues()
-carIssues.troubleshoot_car_issues()
+carIssues.run()

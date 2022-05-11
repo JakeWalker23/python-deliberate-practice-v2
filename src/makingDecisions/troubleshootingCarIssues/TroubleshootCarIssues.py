@@ -1,64 +1,88 @@
 class TroubleshootCarIssues:
-    def __init__(self):
-        self.choice = ''
-        self.answer = ''
 
-    def troubleshoot_car_issues(self):
+    def run(self):
         print("Welcome to the car troubleshooting program.")
         print("Please enter y for yes or n for no")
-        print("")
-        self.choice = input("Is the car silent when you turn the key?")
 
-        if self.choice == 'y':
+        choice = self.check_car_is_silent_when_turn_key()
 
-            self.choice = input("Are the battery terminals corroded?")
+        if choice == 'yes':
+            return self.__check_if_battery_terminals_corroded()
+        elif choice == 'no':
+            answer = self.check_if_car_makes_clicking_noise()
 
-            if self.choice == 'y':
-                self.answer = "Clean terminals and try starting again."
-                print(self.answer)
+            if answer == 'no':
+                answer2 = self.check_if_car_cranks_but_fails()
 
-            elif self.choice == 'n':
-                self.answer = "Replace cables and try again."
-                print(self.answer)
-                return
+                if answer2 == 'no':
+                    answer3 = self.check_if_engine_starts_then_dies()
 
-        if self.choice == 'n':
+                    if answer3 == 'y':
+                        return self.__check_if_car_has_fuel_injection()
+                    else:
+                        return False
 
-            self.choice = input("Does the car make a clicking noise?")
+                else:
+                    return answer2
 
-            if self.choice == 'y':
+            else:
+                return answer
+        else:
+            return False
 
-                self.answer = "Replace the battery."
-                print(self.answer)
+    def check_car_is_silent_when_turn_key(self):
+        choice = input("Is the car silent when you turn the key?")
 
-            elif self.choice == 'n':
+        if choice == 'y':
+            return 'yes'
+        else:
+            return 'no'
 
-                self.choice = input("Does the car crank up but fail to start?")
+    def __check_if_battery_terminals_corroded(self):
+        choice = input("Are the battery terminals corroded?")
 
-                if self.choice == 'y':
+        if choice == 'y':
+            print("Clean terminals and try starting again.")
 
-                    self.answer = "Check spark plug connections."
-                    print(self.answer)
+            return "Clean terminals and try starting again."
+        elif choice == 'n':
+            print("Replace cables and try again.")
 
-                elif self.choice == 'n':
+            return "Replace cables and try again."
 
-                    self.choice = input(
-                        "Does the engine start up and then die?")
+    def check_if_car_makes_clicking_noise(self):
+        choice = input("Does the car make a clicking noise?")
 
-                    if self.choice == 'y':
+        if choice == 'y':
+            print("Replace the battery")
 
-                        self.choice = input(
-                            "Does your car have fuel injection?")
+            return 'Replace the battery.'
+        else:
+            return 'no'
 
-                        if self.choice == 'y':
+    def check_if_car_cranks_but_fails(self):
+        choice = input("Does the car crank up but fail?")
 
-                            self.answer = "Get it in for service."
-                            print(self.answer)
+        if choice == 'y':
+            print("Check spark plug connections")
 
-                        elif self.choice == 'n':
-                            self.answer = 'Check to ensure the choke is opening and closing.'
-                            print(self.answer)
+            return "Check spark plug connections."
 
-                    elif self.choice == 'n':
-                        self.answer = 'See a specialist.'
-                        print(self.answer)
+        else:
+            return 'no'
+
+    def check_if_engine_starts_then_dies(self):
+        choice = input("Does the engine start and then die?")
+
+        if choice == 'y':
+            return 'yes'
+        else:
+            return False
+
+    def __check_if_car_has_fuel_injection(self):
+        choice = input("Does your car have fuel injection?")
+
+        if choice == 'y':
+            return "Get it in for service."
+        elif choice == 'n':
+            return "Check to ensure the choke is opening and closing."
