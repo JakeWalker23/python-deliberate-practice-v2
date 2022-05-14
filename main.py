@@ -1,5 +1,4 @@
-from src.makingDecisions.troubleshootingCarIssues.TroubleshootCarIssues import TroubleshootCarIssues
-print("Running code")
+from src.calculations.area_of_rectangle_room.Room import Room
 
-carIssues = TroubleshootCarIssues()
-carIssues.run()
+room = Room()
+room.run()
