@@ -11,7 +11,7 @@ class Currency:
 
     def run(self):
         self.__retrieve_input()
-        self.__converted_currency = self.__convert_currency()
+        self.__convert_currency()
 
         print(f"{self.__convert_amount} at an exchange rate from {self.__country} is ${self.__converted_currency} US Dollars")
 
@@ -31,7 +31,7 @@ class Currency:
     def __convert_currency(self):
         exchange_rate = exchange_lookup[self.__country.lower()]
 
-        return self.__convert_amount * exchange_rate
+        self.__converted_currency = self.__convert_amount * exchange_rate
 
     @property
     def country(self):
