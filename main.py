@@ -1,5 +1,4 @@
-from src.makingDecisions.troubleshootingCarIssues.TroubleshootCarIssues import TroubleshootCarIssues
-print("Running code")
+from src.calculations.currency_converter.Currency import Currency
 
-carIssues = TroubleshootCarIssues()
-carIssues.run()
+currency = Currency()
+currency.run()
