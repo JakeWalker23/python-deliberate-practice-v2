@@ -1,4 +1,4 @@
-from src.calculations.area_of_rectangle_room.Room import Room
+from src.calculations.currency_converter.Currency import Currency
 
-room = Room()
-room.run()
+currency = Currency()
+currency.run()

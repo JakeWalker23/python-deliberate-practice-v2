@@ -6,23 +6,19 @@ from unittest.mock import patch
 class Test_Room(unittest.TestCase):
 
     @patch('builtins.input')
-    @patch('builtins.input')
-    def test_run(self, mocked_input_1, mocked_input_2):
-        mocked_input_1.return_value = 5.5
-        mocked_input_2.return_value = 5.5
+    def test_run(self, mocked_input_1):
+        mocked_input_1.side_effect = [5.125, 10.5]
 
         room = Room()
         room.run()
 
-        assert room.area == 30.25
-        assert room.meter_area == 9.2202
-        assert room.squared_meter_area == 85.01208804000001
+        assert room.area == 53.8125
+        assert room.meter_area == 16.40205
+        assert room.squared_meter_area == 269.0272442025
 
     @patch('builtins.input')
-    @patch('builtins.input')
-    def test_run_2(self, mocked_input_1, mocked_input_2):
-        mocked_input_1.return_value = 1
-        mocked_input_2.return_value = 1
+    def test_run_2(self, mocked_input_1):
+        mocked_input_1.side_effect = [1, 1]
 
         room = Room()
         room.run()
