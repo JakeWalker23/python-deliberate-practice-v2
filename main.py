@@ -1,4 +1,4 @@
-from src.calculations.currency_converter.Currency import Currency
+from src.calculations.paint_calculator.PaintCalculator import Gallons
 
-currency = Currency()
-currency.run()
+gallons = Gallons()
+gallons.run()

@@ -1,7 +1,6 @@
-import unittest
 from src.calculations.currency_converter.Currency import Currency
 from unittest.mock import patch
-import sys
+import unittest
 
 
 class Test_Currency(unittest.TestCase):
