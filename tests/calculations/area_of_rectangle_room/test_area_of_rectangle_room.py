@@ -1,6 +1,6 @@
-import unittest
 from src.calculations.area_of_rectangle_room.Room import Room
 from unittest.mock import patch
+import unittest
 
 
 class Test_Room(unittest.TestCase):

@@ -1,4 +1,4 @@
-from src.calculations.currency_converter.Currency import Currency
+from src.calculations.pizza_party.Pizza import Pizza
 
-currency = Currency()
-currency.run()
+pizza = Pizza()
+pizza.run()
