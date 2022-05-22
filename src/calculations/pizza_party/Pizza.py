@@ -13,6 +13,8 @@ class Pizza:
         self.__print_response_to_std_out(self.__slices_per_person)
 
     def __retrieve_input(self):
+        print("Welcome to Pizza calculator. Please enter the number of people, amount of pizzas and number of slices per pizza. ")
+
         self.__people = int(input('How many people are there?'))
         self.__pizzas = int(input('How many pizzas are there?'))
         self.__slices = int(input('How many slices per pizza are there?'))

@@ -16,6 +16,8 @@ class Currency:
         print(f"{self.__convert_amount} at an exchange rate from {self.__country} is ${self.__converted_currency} US Dollars")
 
     def __retrieve_input(self):
+        print("Welcome to currency conveter. Please enter a country for exchange in US dollars & amount to be exchanged.")
+
         self.__country = input(
             "Please enter a country for exchange with US Dollars ")
 

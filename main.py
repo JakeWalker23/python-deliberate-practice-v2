@@ -1,4 +1,4 @@
-from src.calculations.pizza_party.Pizza import Pizza
+from src.calculations.paint_calculator.PaintCalculator import Gallons
 
-pizza = Pizza()
-pizza.run()
+gallons = Gallons()
+gallons.run()
