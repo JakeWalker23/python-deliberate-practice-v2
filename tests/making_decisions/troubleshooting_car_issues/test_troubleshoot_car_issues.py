@@ -1,4 +1,4 @@
-from src.makingDecisions.troubleshootingCarIssues.TroubleshootCarIssues import TroubleshootCarIssues
+from src.making_decisions.troubleshooting_car_issues.TroubleshootCarIssues import TroubleshootCarIssues
 from unittest.mock import patch
 from unittest import mock, TestCase
 import unittest

@@ -1,4 +1,4 @@
-from src.makingDecisions.legalDrivingAge.challenge.countries import legal_driving_age as countries
+from src.making_decisions.legal_driving_age.resources.countries import legal_driving_age as countries
 
 
 class DrivingAge:

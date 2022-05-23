@@ -1,4 +1,4 @@
-from src.makingDecisions.bmiCalculator.BMI import BMI
+from src.making_decisions.bmi_calculator.BMI import BMI
 from unittest.mock import patch
 import unittest
 

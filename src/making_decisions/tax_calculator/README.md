@@ -6,6 +6,14 @@ amount. The program should prompt for the order amount and the state. If the sta
 charged 5.5% tax. The program should display the subtotal, tax, and total for Wisconsin residents but display just the
 total for non-residents.
 
+### Challenges
+
+Allow the user to enter a state abbreviation in upper,
+lower, or mixed case.
+
+Also allow the user to enter the state’s full name in
+upper, lower, or mixed case.
+
 
 #### Verbs = compute, prompt, display
 #### Nouns = tax, order amount, state

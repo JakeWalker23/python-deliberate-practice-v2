@@ -13,7 +13,7 @@ Create a program that walks the user through troubleshoot-
 ing issues with a car. Use the following decision tree to build
 the system:
 
-![Expert system](src/makingDecisions/troubleshootingCarIssues/expert-system.png)
+![Expert system](src/making_decisions/troubleshootingCarIssues/expert-system.png)
 
 ### Example Output
 

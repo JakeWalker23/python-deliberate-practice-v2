@@ -1,4 +1,4 @@
-from src.makingDecisions.numbersToMonths.numbersToMonths import NumbersToMonths
+from src.making_decisions.numbers_to_months.numbersToMonths import NumbersToMonths
 from unittest.mock import patch
 import unittest
 
