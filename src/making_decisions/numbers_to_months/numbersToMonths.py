@@ -1,4 +1,4 @@
-from src.makingDecisions.numbersToMonths.resources.months import months
+from src.making_decisions.numbers_to_months.resources.months import months
 import sys
 
 

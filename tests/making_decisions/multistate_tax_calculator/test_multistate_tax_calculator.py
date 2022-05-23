@@ -1,4 +1,4 @@
-from src.makingDecisions.multistateTaxCalculator.multistateTaxCalculator import MultiStateTaxCalculator
+from src.making_decisions.multistate_tax_calculator.MultistateTaxCalculator import MultiStateTaxCalculator
 import unittest
 
 

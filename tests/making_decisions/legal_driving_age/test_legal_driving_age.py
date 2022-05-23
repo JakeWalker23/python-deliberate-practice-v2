@@ -1,4 +1,4 @@
-from src.makingDecisions.legalDrivingAge.challenge.LegalDrivingAgeChallenge import DrivingAge
+from src.making_decisions.legal_driving_age.LegalDrivingAge import DrivingAge
 import unittest
 
 
