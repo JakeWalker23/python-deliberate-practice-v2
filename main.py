@@ -1,4 +1,4 @@
-from src.calculations.paint_calculator.PaintCalculator import Gallons
+from src.makingDecisions.numbersToMonths.numbersToMonths import NumbersToMonths
 
-gallons = Gallons()
-gallons.run()
+test = NumbersToMonths()
+test.run()
