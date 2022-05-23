@@ -1,4 +1,3 @@
-from multiprocessing.sharedctypes import Value
 from src.makingDecisions.numbersToMonths.resources.months import months
 import sys
 
