@@ -1,28 +1,40 @@
 from src.makingDecisions.numbersToMonths.numbersToMonths import NumbersToMonths
+from unittest.mock import patch
 import unittest
 
 
 class Test_NumbersToNames(unittest.TestCase):
-    def test_convert_to_1_to_month(self):
-        months = NumbersToMonths()
-        months.user_choice = 1
 
-        months.convert_to_month()
+    @patch('builtins.input')
+    def test_run_integration_july(self, mock_input):
+        mock_input.return_value = 7
 
-        assert months.converted_month == "January"
+        numbers_to_months = NumbersToMonths()
+        numbers_to_months.run()
 
-    def test_convert_to_12_to_month(self):
-        months = NumbersToMonths()
-        months.user_choice = 12
+        assert numbers_to_months.converted_month == 'July'
 
-        months.convert_to_month()
+    @patch('builtins.input')
+    def test_run_integration_january(self, mock_input):
+        mock_input.return_value = 1
 
-        assert months.converted_month == "December"
+        numbers_to_months = NumbersToMonths()
+        numbers_to_months.run()
 
-    def test_key_error_for_user_input(self):
-        months = NumbersToMonths()
-        months.user_choice = ""
+        assert numbers_to_months.converted_month == 'January'
 
-        months.convert_to_month()
+    @patch('builtins.input')
+    def test_run_integration_december(self, mock_input):
+        mock_input.return_value = 12
 
-        assert len(months.errors) > 0
+        numbers_to_months = NumbersToMonths()
+        numbers_to_months.run()
+
+        assert numbers_to_months.converted_month == 'December'
+
+    def test_display_returns_false_when_choice_invalid(self):
+        numbers_to_months = NumbersToMonths()
+        numbers_to_months.errors.append("Test")
+        result = numbers_to_months.display()
+
+        assert result == False
