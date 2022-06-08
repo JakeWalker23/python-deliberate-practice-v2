@@ -1,3 +1,0 @@
-[  ] Refactor the multi state tax calculator with tests
-
-[  ] Blood alochol calculator needs refactoring into a class
