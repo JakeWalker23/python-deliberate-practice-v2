@@ -2,7 +2,6 @@ from src.making_decisions.tax_calculator.TaxCalculator import TaxCalculator
 from unittest.mock import patch
 import unittest
 
-
 class Test_TaxCalculator(unittest.TestCase):
     
     @patch('builtins.input')

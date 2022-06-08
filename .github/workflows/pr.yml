@@ -18,9 +18,17 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: dschep/install-pipenv-action@v1
+
+      - name: Install Python and run tests
+        uses: dschep/install-pipenv-action@v1
         with:
           version: 2021.5.29
       - run: |
           pipenv install
           pipenv run test
+
+      - name: Lint Python in PEP8
+        id: autopep8
+        uses: peter-evans/autopep8@v1
+        with:
+          args: --recursive --in-place --aggressive --aggressive .
