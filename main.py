@@ -1,4 +1,7 @@
-from src.making_decisions.numbersToMonths.numbersToMonths import NumbersToMonths
+from src.making_decisions.temperature_converter.TemperatureConverter import TemperatureConverter
 
-test = NumbersToMonths()
-test.run()
+temperature_converter = TemperatureConverter()
+temperature_converter.run()
+
+
+

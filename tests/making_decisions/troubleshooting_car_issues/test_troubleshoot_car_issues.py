@@ -3,7 +3,6 @@ from unittest.mock import patch
 from unittest import mock, TestCase
 import unittest
 
-
 class Test_TroubleshootCarIssues(unittest.TestCase):
 
     @patch('builtins.input')
