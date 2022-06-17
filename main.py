@@ -1,8 +1,7 @@
-from src.making_decisions.multistate_tax_calculator.MultistateTaxCalculator import MultiStateTaxCalculator
+from src.making_decisions.bmi_calculator.BMI import BMI
 
-MSC = MultiStateTaxCalculator()
-
-MSC.run()
+bmi = BMI()
+bmi.run()
 
 
 
