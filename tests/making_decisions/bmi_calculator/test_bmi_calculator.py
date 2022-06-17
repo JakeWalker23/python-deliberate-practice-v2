@@ -2,43 +2,37 @@ from src.making_decisions.bmi_calculator.BMI import BMI
 from unittest.mock import patch
 import unittest
 
-
 class TestBMICalculator(unittest.TestCase):
-    def test_bmi_calculate(self):
-        height = 72
-        weight = 182
-
-        bmi = BMI(height, weight)
-        bmi.calculate_bmi()
-
+    @patch('builtins.input')   
+    def test_display_bmi_is_ideal(self, mock_input):
+        mock_input.side_effect = [72, 182]
+    
+        bmi = BMI()
+        bmi.run()
+        assert bmi.height == 72
+        assert bmi.weight == 182
         assert bmi.bmi_index == 24.68
+        
+    @patch('builtins.input')   
+    def test_display_bmi_is_overweight(self, mock_input):
+        mock_input.side_effect = [50, 100]
+    
+        bmi = BMI()
+        bmi.run()
 
-    def test_display_bmi_is_ideal(self):
-        height = 72
-        weight = 182
+        assert bmi.height == 50
+        assert bmi.weight == 100
+        assert bmi.bmi_index == 28.12
+        
+    @patch('builtins.input')   
+    def test_display_bmi_is_underweight(self, mock_input):
+        mock_input.side_effect = [50, 40]
+    
+        bmi = BMI()
+        bmi.run()
 
-        bmi = BMI(height, weight)
-        bmi.calculate_bmi()
-        result = bmi.display_bmi()
-
-        assert result == '24.68. You are the ideal weight.'
-
-    def test_display_bmi_is_overweight(self):
-        height = 50
-        weight = 100
-
-        bmi = BMI(height, weight)
-        bmi.calculate_bmi()
-        result = bmi.display_bmi()
-
-        assert result == '28.12. You are overweight. Please consult your doctor.'
-
-    def test_display_bmi_is_underweight(self):
-        height = 50
-        weight = 40
-
-        bmi = BMI(height, weight)
-        bmi.calculate_bmi()
-        result = bmi.display_bmi()
-
-        assert result == '11.25. You are underweight. Please consult your doctor.'
+        assert bmi.height == 50 
+        assert bmi.weight == 40
+        assert bmi.bmi_index == 11.25
+        assert bmi.upper_bmi_range == 25
+        assert bmi.lower_bmi_range == 18.5

@@ -1,7 +1,13 @@
-from src.making_decisions.temperature_converter.TemperatureConverter import TemperatureConverter
+from src.making_decisions.legal_driving_age.LegalDrivingAge import DrivingAge
 
-temperature_converter = TemperatureConverter()
-temperature_converter.run()
+driving_age = DrivingAge()
+
+driving_age.read_driving_age()
+driving_age.compare_driving_age()
+driving_age.filter_legal_countries()
+driving_age.display()
+
+
 
 
 
