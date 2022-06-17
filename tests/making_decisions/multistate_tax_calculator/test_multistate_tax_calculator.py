@@ -1,53 +1,66 @@
 from src.making_decisions.multistate_tax_calculator.MultistateTaxCalculator import MultiStateTaxCalculator
+from unittest.mock import patch
 import unittest
 
 
 class TestMultiStateTaxCalculator(unittest.TestCase):
 
-    def test_calculate_tax_for_non_selected_state(self):
-        multiState = MultiStateTaxCalculator()
-        multiState.order_amount = 100
-        multiState.state = 'New york'
+    @patch('builtins.input')
+    def test_calculate_tax_for_non_selected_state(self, mock_input):
+        mock_input.side_effect = [1000, "New York",]
+        
+        MSC = MultiStateTaxCalculator()
+        MSC.run()
+        
+        assert MSC.order_amount == 1000
+        assert MSC.state == "New York"
+        assert MSC.total == 1000
 
-        multiState.calculateTax()
+    @patch('builtins.input')
+    def test_calculate_tax_for_illinois_state(self, mock_input):
+        mock_input.side_effect = [1000, "Illinois"]
+        
+        MSC = MultiStateTaxCalculator()
+        MSC.run()
+        
+        assert MSC.order_amount == 1000
+        assert MSC.state == "Illinois"
+        assert MSC.illinois_sales_tax == 0.08
+        assert MSC.total == 1080
 
-        assert multiState.total == 100
+    @patch('builtins.input')
+    def test_calculate_tax_for_wisconsin_state(self, mock_input):
+        mock_input.side_effect = [1000, "Wisconsin", "Lafayette"]
+        
+        MSC = MultiStateTaxCalculator()
+        MSC.run()
+        
+        assert MSC.order_amount == 1000
+        assert MSC.state == "Wisconsin"
+        assert MSC.total == 1000
 
-    def test_calculate_tax_for_illinois_state(self):
-        multiState = MultiStateTaxCalculator()
-        multiState.order_amount = 10
-        multiState.state = 'Illinois'
+    @patch('builtins.input')
+    def test_calculate_tax_for_wisconsin_state_eau_claire_county(self, mock_input):
+        mock_input.side_effect = [1000, "Wisconsin", "eau claire"]
+        
+        MSC = MultiStateTaxCalculator()
+        MSC.run()
+        
+        assert MSC.order_amount == 1000
+        assert MSC.state == "Wisconsin"
+        assert MSC.county == "eau claire"
+        assert MSC.eau_claire_sales_tax == 0.004
+        assert MSC.total == 1004
 
-        multiState.calculateTax()
-
-        assert multiState.total == 10.80
-
-    def test_calculate_tax_for_wisconsin_state(self):
-        multiState = MultiStateTaxCalculator()
-        multiState.order_amount = 500
-        multiState.state = 'Wisconsin'
-        multiState.county = 'Lafayette'
-
-        multiState.calculateTax()
-
-        assert multiState.total == 500
-
-    def test_calculate_tax_for_wisconsin_state_eau_claire_county(self):
-        multiState = MultiStateTaxCalculator()
-        multiState.order_amount = 100
-        multiState.state = 'Wisconsin'
-        multiState.county = 'eau claire'
-
-        multiState.calculateTax()
-
-        assert multiState.total == 100.4
-
-    def test_calculate_tax_for_wisconsin_state_dunn_county(self):
-        multiState = MultiStateTaxCalculator()
-        multiState.order_amount = 100
-        multiState.state = 'Wisconsin'
-        multiState.county = 'dunn'
-
-        multiState.calculateTax()
-
-        assert multiState.total == 100.5
+    @patch('builtins.input')
+    def test_calculate_tax_for_wisconsin_state_dunn_county(self, mock_input):
+        mock_input.side_effect = [1000, "Wisconsin", "dunn"]
+        
+        MSC = MultiStateTaxCalculator()
+        MSC.run()
+        
+        assert MSC.order_amount == 1000
+        assert MSC.state == "Wisconsin"
+        assert MSC.county == "dunn"
+        assert MSC.dunn_sales_tax == 0.005
+        assert MSC.total == 1005

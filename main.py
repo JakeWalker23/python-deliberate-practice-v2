@@ -1,7 +1,10 @@
-from src.making_decisions.temperature_converter.TemperatureConverter import TemperatureConverter
+from src.making_decisions.multistate_tax_calculator.MultistateTaxCalculator import MultiStateTaxCalculator
 
-temperature_converter = TemperatureConverter()
-temperature_converter.run()
+MSC = MultiStateTaxCalculator()
+
+MSC.run()
+
+
 
 
 
