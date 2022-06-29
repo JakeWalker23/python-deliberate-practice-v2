@@ -1,13 +1,4 @@
-from src.making_decisions.legal_driving_age.LegalDrivingAge import DrivingAge
+from src.external_services.whos_in_space import SpaceService
 
-driving_age = DrivingAge()
-
-driving_age.read_driving_age()
-driving_age.compare_driving_age()
-driving_age.filter_legal_countries()
-driving_age.display()
-
-
-
-
-
+space_service = SpaceService()
+space_service.run()
